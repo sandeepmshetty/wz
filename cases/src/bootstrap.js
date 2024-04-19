@@ -1,20 +1,15 @@
-import faker from "faker";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 const mount = (el) => {
-  let products = "";
-
-  for (let i = 0; i < 5; i++) {
-    const productName = faker.commerce.productName();
-    products += `<div>${productName}</div>`;
-  }
-
-  el.innerHTML = products;
+  ReactDOM.render(<App />, el);
 };
 
 if (process.env.NODE_ENV === "development") {
-  const el = document.querySelector("#dev-products");
+  const casesRoot = document.querySelector("#cases-root-node");
 
-  if (el) mount(el);
+  if (casesRoot) mount(casesRoot);
 }
 
 export { mount };
