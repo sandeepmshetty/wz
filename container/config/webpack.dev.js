@@ -7,7 +7,7 @@ const packageJson = require('../package.json');
 const devConfig = {
     mode: 'development',
     devServer: {
-        port: 8081,
+        port: 8080,
         historyApiFallback: {
             index: 'index.html',
         },
@@ -15,10 +15,9 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: "cases",
-            filename: "remoteEntry.js",
-            exposes: {
-                "./CasesApp": "./src/bootstrap",
+            name: "container",
+            remotes: {
+                cases: "cases@http://localhost:8081/remoteEntry.js",
             },
             shared: packageJson.devDependencies
         }),

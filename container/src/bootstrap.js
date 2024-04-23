@@ -1,7 +1,5 @@
-import {mount as casesMount} from 'cases/CasesIndex';
-import {mount as documentsMount} from 'documents/DocumentsList'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-console.log('Container!');
-
-casesMount(document.querySelector('#my-products'));
-documentsMount(document.querySelector('#my-dev'));
+ReactDOM.render(<App />, document.querySelector('#wz-cases'));
