@@ -5,7 +5,7 @@ import ThemeProvider from 'react-bootstrap/ThemeProvider';
 
 export default () => {
     return (
-        <div className="app-container">
+        <div className="case-container">
             <ThemeProvider>
                 <BrowserRouter>
                     <Switch>

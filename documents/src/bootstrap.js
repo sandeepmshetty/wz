@@ -1,14 +1,19 @@
-import faker from "faker";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { App } from './App';
 
 const mount = (el) => {
-  const documentList = `<div>You have ${faker.random.number()} items in your cart</div>`;
-  el.innerHTML = documentList;
+  platformBrowserDynamic().bootstrapModule(App)
+    .then(moduleRef => {
+      const appRef = moduleRef.injector.get(ApplicationRef);
+      appRef.attachView(el);
+    })
+    .catch(err => console.error(err));
 };
 
 if (process.env.NODE_ENV === "development") {
-  const el = document.querySelector("#cart-dev");
+  const casesRoot = document.querySelector("#document-list");
 
-  if (el) mount(el);
+  if (casesRoot) mount(casesRoot);
 }
 
 export { mount };

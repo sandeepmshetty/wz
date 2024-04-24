@@ -1,7 +1,7 @@
 import React from 'react';
 import CasesApp from './components/CasesApp';
-/*import { mount as documentsMount } from 'documents/DocumentsList' */
+import DocumentsApp from './components/DocumentsApp';
 
 export default () => {
-    return <div><CasesApp /></div>
+    return <div><div><CasesApp /><DocumentsApp /></div></div>
 };
