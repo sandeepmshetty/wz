@@ -14,7 +14,7 @@ module.exports = {
       name: "container",
       remotes: {
         cases: "cases@http://localhost:8082/remoteEntry.js",
-        angularApp: "angularApp@http://localhost:8081/remoteEntry.js",
+        angularApp: "angularApp@http://localhost:8081/remoteEntry.js", // Update the URL to match the correct location
       },
     }),
     new HtmlWebpackPlugin({

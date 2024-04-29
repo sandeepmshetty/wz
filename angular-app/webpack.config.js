@@ -1,5 +1,5 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   output: {
     publicPath: "auto",
@@ -30,5 +30,8 @@ module.exports = {
       //   "@angular/common",
       // ]
     }),
+    /* new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }), */
   ],
 };
