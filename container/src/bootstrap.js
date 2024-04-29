@@ -1,7 +1,13 @@
 import {mount as casesMount} from 'cases/CasesIndex';
-import {mount as documentsMount} from 'documents/DocumentsList'
+// import {mount as appComponentMount} from 'angularApp/MyFeature';
+import('angularApp/MyFeature')
+        .then((m) => {
+            console.log(m.MyFeatureModule);
+            // m.MyFeatureModule
+        })
+        .catch((err) => console.error('Error lazy loading mfe1', err))
 
 console.log('Container!');
 
 casesMount(document.querySelector('#my-products'));
-documentsMount(document.querySelector('#my-dev'));
+// appComponentMount(document.querySelector('#my-dev'));
